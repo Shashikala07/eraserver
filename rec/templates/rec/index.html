@@ -1,0 +1,97 @@
+{% extends 'rec/base.html' %}
+{% load static %}
+    
+
+{% block body %}
+
+
+
+<!-- The Modal -->
+<div class="modal" id="myNotificationsPopup">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Notifications</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          
+            
+            <div>
+                <ul>
+                    {% for x in notifications %}
+                    <li>
+                        
+                        
+                        {{x.timestamp| date:"d M, Y"}} : {{x.heading}} <a href="{{x.link}}">link</a>
+                        
+                       
+                    </li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+
+
+
+            
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+			<div class="text-center"><a href="#">All Notifications</a></div>
+        
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <img src="{% static 'rec/images/bg.png' %}" class="img-fluid landing" alt="Responsive image">
+    <div id="contact" class="sm-padding" style="background-color: black;">
+        <div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="section-header text-center">
+					<h2 class="title white-text">Contact us</h2>
+				</div>
+			
+				<div class="col-md-12">
+
+					<!-- footer logo -->
+					<div class="footer-logo">
+						<a href="#"><img src="{% static 'rec/images/era.gif' %}" alt="logo"></a>
+					</div>
+					<!-- /footer logo -->
+					<!-- footer follow -->
+					<ul class="footer-follow" style="font-size: 48px ">
+						<li><a href="https://www.facebook.com/eraiitkanpur/" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.github.com/ERA-IITK" target="_blank"><i class="fa fa-github"></i></a>
+                        <a href="mailto:eraiitk@gmail.com"><i class="fa fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/company/era-iitk/" target="_blank"><i class="fa fa-linkedin" target="_blank"></i></a>
+                        <a href="https://www.youtube.com/channel/UCaaEga5jSCEN6ph6w9E9TVQ"><i class="fa fa-youtube" target="_blank"></i></a></li>
+					</ul>
+					<!-- /footer follow -->
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+
+    </div>
+
+
+    {% endblock %}
